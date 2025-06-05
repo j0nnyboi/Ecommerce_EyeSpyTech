@@ -37,13 +37,15 @@ class Order {
   }
 
   async postCreateOrder(req, res) {
-    let { allProduct, user, amount, transactionId, address, phone } = req.body;
+    let { allProduct, user, amount, transactionId, address,postcode,  County, phone } = req.body;
     if (
       !allProduct ||
       !user ||
       !amount ||
       !transactionId ||
       !address ||
+	  !County ||
+	  !postcode ||
       !phone
     ) {
       return res.json({ message: "All filled must be required" });
@@ -55,6 +57,8 @@ class Order {
           amount,
           transactionId,
           address,
+		  County,
+		  postcode,
           phone,
         });
         let save = await newOrder.save();

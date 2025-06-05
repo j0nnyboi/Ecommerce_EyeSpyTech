@@ -64,6 +64,8 @@ export const pay = async (
                 amount: res.transaction.amount,
                 transactionId: res.transaction.id,
                 address: state.address,
+				County: state.County,
+				postcode: state.postcode,
                 phone: state.phone,
               };
               try {

@@ -26,6 +26,14 @@ const orderSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+	County: {
+      type: String,
+      required: true,
+	  
+    },postcode: {
+      type: String,
+      required: true,
+    },
     phone: {
       type: Number,
       required: true,

@@ -9,7 +9,7 @@ const apiURL = process.env.REACT_APP_API_URL;
 const AllCategory = (props) => {
   const { data, dispatch } = useContext(OrderContext);
   const { orders, loading } = data;
-
+ console.log(orders);
   useEffect(() => {
     fetchData(dispatch);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -49,6 +49,8 @@ const AllCategory = (props) => {
               <th className="px-4 py-2 border">Email</th>
               <th className="px-4 py-2 border">Phone</th>
               <th className="px-4 py-2 border">Address</th>
+			  <th className="px-4 py-2 border">County</th>
+			  <th className="px-4 py-2 border">postcode</th>
               <th className="px-4 py-2 border">Created at</th>
               <th className="px-4 py-2 border">Updated at</th>
               <th className="px-4 py-2 border">Actions</th>
@@ -148,6 +150,8 @@ const CategoryTable = ({ order, editOrder }) => {
         </td>
         <td className="hover:bg-gray-200 p-2 text-center">{order.phone}</td>
         <td className="hover:bg-gray-200 p-2 text-center">{order.address}</td>
+        <td className="hover:bg-gray-200 p-2 text-center">{order.County}</td>
+        <td className="hover:bg-gray-200 p-2 text-center">{order.postcode}</td>
         <td className="hover:bg-gray-200 p-2 text-center">
           {moment(order.createdAt).format("lll")}
         </td>
